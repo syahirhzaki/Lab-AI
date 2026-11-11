@@ -1,0 +1,6 @@
+user my flight is not good! it was delayed again. url
+
+'not' in scikit-learn's English stop words: True
+Vocabulary after stopword removal: ['flight', 'good']
+Feature vector 'my flight is not good': [1 1]
+Feature vector 'my flight is good':     [1 1]

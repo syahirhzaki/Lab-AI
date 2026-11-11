@@ -1,0 +1,13 @@
+('Airline', 'operates', 'Flight')
+('Passenger', 'books', 'Flight')
+('Flight', 'has', 'Destination')
+('Flight', 'has', 'Departure Time')
+('Flight', 'can be', 'Delayed')
+('Flight', 'can be', 'Cancelled')
+('Delayed', 'may cause', 'Passenger Complaint')
+('Cancelled', 'may cause', 'Passenger Complaint')
+('Passenger', 'makes', 'Passenger Complaint')
+('Passenger Complaint', 'is prioritised by', 'Customer Support')
+
+A Flight can be: ['Delayed', 'Cancelled']
+Causes of Passenger Complaint: ['Delayed', 'Cancelled']

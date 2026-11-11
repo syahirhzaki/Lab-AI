@@ -1,0 +1,18 @@
+Accuracy: 0.8
+Macro F1: 0.662
+
+Confusion matrix (rows = true, columns = predicted): ['negative', 'neutral', 'positive']
+[[60  0  0]
+ [18  2  0]
+ [ 2  0 18]]
+
+              precision    recall  f1-score   support
+
+    negative      0.750     1.000     0.857        60
+     neutral      1.000     0.100     0.182        20
+    positive      1.000     0.900     0.947        20
+
+    accuracy                          0.800       100
+   macro avg      0.917     0.667     0.662       100
+weighted avg      0.850     0.800     0.740       100
+

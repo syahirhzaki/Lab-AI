@@ -1,0 +1,77 @@
+\nQ1 — INSPECT, CLEAN AND DEDUPLICATE
+Raw rows: 14640 | exact duplicate texts: 213
+Duplicates after normalisation: 355 | retained: 14285
+airline_sentiment
+negative    9069
+neutral     2981
+positive    2235
+Name: count, dtype: int64
+Class shares:\n airline_sentiment
+negative    0.635
+neutral     0.209
+positive    0.156
+Name: proportion, dtype: float64
+\nQ2 — SPLIT COUNTS train         9999
+test          2143
+validation    2143
+Name: count, dtype: int64
+airline_sentiment  negative  neutral  positive
+row_0                                         
+test                   1361      447       335
+train                  6348     2087      1564
+validation             1360      447       336
+\nQ3 — VOCABULARY SIZES (FIT TRAIN ONLY)
+(1, 1): 4,671 features
+(1, 2): 11,850 features
+\nQ4 — BASELINE negative {'model': 'Majority baseline', 'accuracy': 0.6346243583761083, 'macro_precision': 0.2115414527920361, 'macro_recall': 0.3333333333333333, 'macro_f1': 0.2588257683889999}
+\nQ5 — VALIDATION GRID\n ngram_range  alpha  validation_macro_f1  features
+     (1, 2)    0.3             0.697327     11850
+     (1, 2)    0.5             0.690291     11850
+     (1, 2)    1.0             0.686801     11850
+     (1, 1)    0.3             0.675990      4671
+     (1, 1)    0.5             0.673942      4671
+     (1, 1)    1.0             0.671179      4671
+     (1, 2)    2.0             0.651577     11850
+     (1, 1)    2.0             0.644237      4671
+Selected: {'ngram': (1, 2), 'alpha': 0.3, 'score': 0.6973265610143574}
+\nQ6 — TEST METRICS\n             model  accuracy  macro_precision  macro_recall  macro_f1
+Majority baseline  0.635091         0.211697      0.333333  0.258942
+   Multinomial NB  0.769949         0.703647      0.693329  0.697829
+\nPer-class report:\n               precision    recall  f1-score   support
+
+    negative       0.84      0.87      0.86      1361
+     neutral       0.60      0.53      0.56       447
+    positive       0.67      0.67      0.67       335
+
+    accuracy                           0.77      2143
+   macro avg       0.70      0.69      0.70      2143
+weighted avg       0.76      0.77      0.77      2143
+
+Confusion matrix (rows=true, columns=predicted):\n           negative  neutral  positive
+negative      1185      115        61
+neutral        158      239        50
+positive        63       46       226
+\nQ7 — AIRLINE SUBGROUP RESULTS\n        airline  n_test  accuracy  macro_f1
+      American     398  0.781407  0.662109
+         Delta     324  0.679012  0.658519
+     Southwest     354  0.757062  0.725546
+    US Airways     410  0.841463  0.714268
+        United     594  0.769360  0.674752
+Virgin America      63  0.777778  0.782491
+\nMost confident errors (up to four per true class):\n           tweet_id airline_sentiment predicted_sentiment  confidence      error_category                                                                                                                                         text
+569607124772196352          negative             neutral    1.000000  ambiguous_or_other @AmericanAir I was flying from Ft Lauderdale FL to Seattle WA on the 02/28/2015 until the 03/03/2015 and they don't want to honor my flight.
+569947699471974400          negative             neutral    0.999993  ambiguous_or_other                                                                    I hate you all. RT @JetBlue: Our fleet's on fleek. http://t.co/uTdfqF5WPA
+569925538946551808          negative             neutral    0.999991 question_or_request                                                                              Why? 😒 RT @JetBlue Our fleet's on fleek. http://t.co/I7Ut2ZvHCO
+570011533205336064          negative             neutral    0.999890 question_or_request @USAirways #686 is delayed due to tail winds and need to jump on #521 to SEA, leaving the same time this arrives. Is there a chance to hold?
+567733847132229632           neutral            positive    1.000000            negation             @JetBlue Ok great thanks! I had a great flight, FYI. I'm excited to fly again. I just was frustrated I was not able to check in.
+569480220203474944           neutral            negative    1.000000            negation                  @united I tried.   We were hung up on, twice. After speaking with someone, then put on hold for 45 minutes.  No resolution.
+569209051260678144           neutral            negative    0.999999            negation                @SouthwestAir I never got my flight confirmation. I've been on hold for an hour and I can't get info online. What am I to do?
+569541591586643968           neutral            negative    0.999999  ambiguous_or_other       @united.  Pls hold UA2066 for 9 cnx pax frm UA6194.  All runners.  A 5 min hold will save 2 fam frm miscnx.  Pls. Twitter is watching.
+568437415603507200          positive             neutral    1.000000  ambiguous_or_other @VirginAmerica For my Grandma Ella's 80th, she would &lt;3 a bday greeting from your flight crew! She was a stewardess for Eastern Airlines.
+569924145380634624          positive             neutral    0.999995  ambiguous_or_other                                                                                LMAO “@JetBlue: Our fleet's on fleek. http://t.co/aIyC9WV5oq”
+569947151339429889          positive             neutral    0.999942  ambiguous_or_other                                                                             Lmfaooo “@JetBlue: Our fleet's on fleek. http://t.co/1G9RnmYUQe”
+567893808022568961          positive            negative    0.999920  ambiguous_or_other                                                @united big up the pilot of 644 for turning 1hr on the tarmac to just a 20min delayed arrival
+\nCompleted. Outputs saved in: C:\Users\Syahirah Zaki\Downloads\Lab AI\results\lab07
+Files: split.csv, validation_results.csv, metrics.csv, per_class_metrics.csv,
+test_predictions.csv, confusion_matrix.png, per_airline_f1.csv, error_analysis.csv
+Note: scores may vary if your CSV version or preprocessing differs from the slides.

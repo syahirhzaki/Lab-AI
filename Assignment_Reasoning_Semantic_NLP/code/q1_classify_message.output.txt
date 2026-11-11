@@ -1,0 +1,4 @@
+Service Complaint
+Information Request
+Tweet A: Service Complaint | prioritise for support: True
+Tweet B: Information Request | prioritise for support: False
