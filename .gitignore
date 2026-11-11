@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 .venv/
 ~$*
+all_datasets/lab06-ocr-handwritten-prescription/
+results/lab06/preprocessed/
