@@ -1,6 +1,6 @@
 """
 GA Assignment - Genetic Algorithm for Delivery Route Optimisation
-Student: SYAHIRAH BINTI MOHD ZAKI (22010391)
+Student: Syahirah Binti Mohd Zaki (22010391)
 
 The delivery van starts at depot A, visits B, C, D, E, F and G exactly once,
 and returns to A. A Genetic Algorithm searches for the visiting order with the
