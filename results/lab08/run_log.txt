@@ -1,0 +1,54 @@
+====================================================================
+LAB 08 — GENETIC ALGORITHMS: REGRESSION AND REPRODUCIBILITY
+====================================================================
+Project root: C:\Users\Syahirah Zaki\Downloads\Lab AI
+Dataset: C:\Users\Syahirah Zaki\Downloads\Lab AI\all_datasets\lab08-insurance.csv
+Results folder: C:\Users\Syahirah Zaki\Downloads\Lab AI\results\lab08
+
+QUESTION 1 — Scalar sanity check
+Best x = 2.999989 | f(x) = 0.00000000
+
+QUESTION 2 — Prepare regression data
+Rows: 1338 | Train: 1070 | Test: 268
+Predictors: ['age', 'bmi', 'children', 'smoker']
+
+QUESTION 3 — One GA trial
+Seed 1: train RMSE 6113.07 | test RMSE 5829.38 | runtime 0.059 s
+Best chromosome [intercept, age, bmi, children, smoker]: [13346.1  3616.3  1978.4   519.2  9559.3]
+
+QUESTION 4 — Ten independent seeds
+ seed  train_rmse  test_rmse  runtime_s
+    1    6113.068   5829.378      0.051
+    2    6113.068   5829.379      0.054
+    3    6113.068   5829.378      0.055
+    4    6113.068   5829.377      0.054
+    5    6113.068   5829.381      0.052
+    6    6113.068   5829.375      0.052
+    7    6113.068   5829.377      0.059
+    8    6113.068   5829.380      0.050
+    9    6113.068   5829.380      0.048
+   10    6113.068   5829.380      0.052
+Median test RMSE: 5829.38 | SD across seeds: 0.0019
+
+QUESTION 5 — Compare with ordinary least squares
+OLS test RMSE: 5829.38
+OLS coefficients: [3616.3 1978.4  519.2 9559.3]
+Median GA coefficients: [3616.3 1978.4  519.2 9559.3]
+Saved convergence plot.
+
+QUESTION 6 — Population-size sensitivity (40)
+
+SUMMARY
+    method  median_test_rmse  sd_test_rmse  median_runtime_s
+GA pop=100         5829.3787        0.0019            0.0523
+ GA pop=40         5829.3793        0.0174            0.0246
+       OLS         5829.3785        0.0000               NaN
+
+Interpretation:
+- Compare the median and standard deviation across all ten GA seeds.
+- Matching OLS means the GA found the same optimum; it did not beat OLS.
+- OLS is much faster for this unconstrained linear least-squares problem.
+- A smaller population may run faster but can increase run-to-run variation.
+
+All outputs saved in: C:\Users\Syahirah Zaki\Downloads\Lab AI\results\lab08
+Files: ['convergence.png', 'ga_10_runs.csv', 'ga_sensitivity_pop40.csv', 'split.csv', 'summary.csv']

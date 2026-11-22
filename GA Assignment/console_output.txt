@@ -1,0 +1,18 @@
+GA Delivery Route Optimisation
+Seed 42 | population 30 | generations 100 | tournament 3 | crossover 0.9 | mutation 0.2 | elites 2
+
+Generation   1 | best distance 31 km | A -> B -> E -> G -> F -> C -> D -> A
+Generation  10 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  20 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  30 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  40 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  50 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  60 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  70 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  80 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation  90 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+Generation 100 | best distance 29 km | A -> B -> E -> D -> C -> F -> G -> A
+
+Best route found: A -> B -> E -> D -> C -> F -> G -> A
+Total distance: 29 km
+First generation reaching this distance: 5

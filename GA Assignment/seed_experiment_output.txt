@@ -1,0 +1,8 @@
+Brute force over 720 routes: shortest distance = 29 km
+   A -> B -> E -> D -> C -> F -> G -> A
+   A -> G -> F -> C -> D -> E -> B -> A
+
+GA with seeds 1-20 (distance found by each seed):
+population 30, 100 generations: [29, 29, 29, 29, 31, 29, 31, 29, 29, 29, 31, 29, 29, 29, 31, 29, 29, 29, 29, 29] -> optimum in 16/20 runs
+population 10,  50 generations: [29, 31, 29, 31, 29, 29, 29, 29, 29, 29, 29, 31, 31, 29, 31, 29, 29, 29, 31, 29] -> optimum in 14/20 runs
+population  6,  50 generations: [31, 29, 29, 31, 29, 31, 29, 31, 34, 31, 29, 29, 33, 31, 31, 31, 29, 31, 29, 29] -> optimum in 9/20 runs
